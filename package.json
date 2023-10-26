@@ -1,0 +1,17 @@
+{
+  "type":"module",
+  "name": "playwright-supertest-hybrid-framework",
+  "version": "1.0.0",
+  "description": "web and API hybrid automation boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Abhishek Kadavil",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}
