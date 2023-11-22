@@ -1,17 +1,29 @@
 {
-  "type":"module",
   "name": "playwright-supertest-hybrid-framework",
   "version": "1.0.0",
   "description": "web and API hybrid automation boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "pretest": "npx ts-node src/utils/preTest.ts",
+    "test": "cross-env ENV=staging cucumber-js test || true",
+    "posttest": "npx ts-node src/utils/reporter/reporter.ts",
+    "test:failed": "cucumber-js -p rerun @rerun.txt"
   },
   "author": "Abhishek Kadavil",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "@playwright/test": "^1.39.0",
     "chai": "^4.3.10",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "faker": "^5.5.3",
+    "fs-extra": "^11.1.1",
     "mocha": "^10.2.0",
-    "supertest": "^6.3.3"
+    "multiple-cucumber-html-reporter": "^3.5.0",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "winston": "^3.11.0"
   }
 }

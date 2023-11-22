@@ -1,0 +1,52 @@
+{
+    "default": {
+        "tags": "@AllMutiple",
+        "parallel": 4,
+        "retry": 0,
+        "format": [
+            "progress-bar",
+            "json:test-results/cucumber-report/cucumber-html-reporter.json",
+            "message:test-results/cucumber-report/cucumber-html-reporter.ndjson",
+            "html:test-results/cucumber-report/cucumber-report.html",
+            "rerun:@rerun.txt"
+        ],
+        "formatOptions": {
+            "snippetInterface": "async-await",
+            "html": "cucumber-report.html"
+        },
+        "paths": [
+            "tests/features"
+        ],
+        "dryRun": false,
+        "require": [
+            "src/steps/*.ts",
+            "src/utils/hooks.ts"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ]
+    },
+    "rerun": {
+        "parallel": 0,
+        "retry": 0,
+        "format": [
+            "progress-bar",
+            "json:test-results/cucumber-report/cucumber-html-reporter.json",
+            "message:test-results/cucumber-report/cucumber-html-reporter.ndjson",
+            "html:test-results/cucumber-report/cucumber-report.html",
+            "rerun:@rerun.txt"
+        ],
+        "formatOptions": {
+            "snippetInterface": "async-await",
+            "html": "cucumber-report.html"
+        },
+        "dryRun": false,
+        "require": [
+            "src/steps/*.ts",
+            "src/utils/hooks.ts"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ]
+    }
+}

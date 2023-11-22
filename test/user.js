@@ -1,10 +1,8 @@
 import { expect } from "chai";
-import supertest from "supertest";
-const request = supertest("https://gorest.co.in/public/v2");
+import request from "../utils/commonImports.js";
+import 'dotenv/config'
 
-const TOKEN =
-  "b0aef0021b39d875cfba3e9f192aac861c77a871c224d0ec76d467b43049061a";
-
+const TOKEN = process.env.USER_TOKEN;
 describe("Users", () => {
   it("GET ", async () => {
     const res = await request
