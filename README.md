@@ -120,7 +120,7 @@ Test cases are defined in the Features folder in the form of `.feature` file. Th
 **src/utils/dataReader.ts**<br>
 Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. data reading is implimented in `src/utils/dataReader.ts`.
 
-## Test reporting:
+## Test reporting
 **src/utils/reporter/reporter.ts**<br>
 Since we are using `cucumber-js` to run the tests, playwright report is cannot be used(https://github.com/cucumber/cucumber-js/issues/2221), hence we will use multiple-cucumber-html-reporter.
 
@@ -139,7 +139,7 @@ cucumber-html-reporter is more npm trendier than other reporters like allure rep
 It is a is an isolated scope for each scenario. All the operations which are common in scenario level like page object, test data, page etc data passing between test step are
 done through cucumber world object(https://github.com/cucumber/cucumber-js/blob/main/docs/support_files/world.md). i.e. During the execution if we want to share the page or store the order number in one step and use that order number in different step, then we need to use `scenariocontext.ts`.
 
-## Logs:
+## Logs
 **src/utils/logger/logger.ts**<br>
 We are using winston package for logging. we will manage log start and stop process in the hooks. We are sharing the log object between classes using fixture. same thing we can do using scenariocontext as well. Not any particular reason but just want to use fixture in the framework as well. Each scenario will have seperate log file.
 
@@ -148,7 +148,7 @@ We are using winston package for logging. we will manage log start and stop proc
 * **src/utils/hooks.ts** - Manages Before, BeforeAll, BeforeStep, AfterStep, After, AfterAll through that manages page object initialisation, browser context creation, browser invoking, logging, tracing etc.
 * **src/utils/preTest.ts** - clears test-results folder after each execution, This is executed from `pretest` script in the `package.json`.
 
-### Test output
+## Test output
 * The output of the test execution like order number, payment id etc. can be logged in report for the later use, so didn't create any other mechanism for that. Checkout `src/steps/CommonStepDef.ts`.
 
 ## Other features
@@ -172,6 +172,6 @@ We are using winston package for logging. we will manage log start and stop proc
 * Need to impliment DB validations
 * Need to create artifactory for the framework
 
-## Referece:
+## Referece
 * https://github.com/Tallyb/cucumber-playwright/tree/master
 * https://github.com/Tallyb/cucumber-playwright/pull/95/files
