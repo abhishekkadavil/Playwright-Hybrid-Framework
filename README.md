@@ -143,7 +143,7 @@ done through cucumber world object(https://github.com/cucumber/cucumber-js/blob/
 **src/utils/logger/logger.ts**<br>
 We are using winston package for logging. we will manage log start and stop process in the hooks. We are sharing the log object between classes using fixture. same thing we can do using scenariocontext as well. Not any particular reason but just want to use fixture in the framework as well. Each scenario will have seperate log file.
 
-## Other utils:
+## Other utils
 * **src/utils/browserManager.ts** - Manages browser selection as well aas browser settings like headless, timeout, maximise option etc.
 * **src/utils/hooks.ts** - Manages Before, BeforeAll, BeforeStep, AfterStep, After, AfterAll through that manages page object initialisation, browser context creation, browser invoking, logging, tracing etc.
 * **src/utils/preTest.ts** - clears test-results folder after each execution, This is executed from `pretest` script in the `package.json`.
