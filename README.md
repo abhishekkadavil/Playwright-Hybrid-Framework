@@ -33,7 +33,7 @@ cucumber World is used to impliment scenario context(World create an isolated sc
 
 ## Tech stack used
 
-#### E2E Dependencies
+#### E2E dependencies
 * Playwright - typescript - E2E testing library
 
 #### Common framework dependencies
@@ -45,7 +45,7 @@ cucumber World is used to impliment scenario context(World create an isolated sc
 * cucumber - Testing framework
 * faker - for test data
 
-#### API Dependencies
+#### API dependencies
 * chai - assertion library
 * supertest - API testing library
 
@@ -63,7 +63,7 @@ We can execute the test in different ways:
 	* Default value for browser is chrome
 * Rerun failed cases: run `npm run test test:failed`
 
-### Execution Flow
+### Execution flow
 In any point the execution in framework is start from `package.json`. Depending on the command executed in CLI `test:failed` or `test` script will executed.
 
 Test that need to execute are defined in the features files present in the features folder, The set of test cases are identified by appropriate tag name using the tags section in cucumber.js or CLI.
@@ -96,7 +96,7 @@ While executing `npm run test test:failed` package.json -> script -> test:failed
 * using `npm run test test:failed` we can execute failed test cases
 
 
-## Test Execution Configurations
+## Test configurations
 
 Execution configuration can be done from `cucumber.js` and `utils/env/.env*`
 
@@ -116,7 +116,7 @@ Test cases are defined in the Features folder in the form of `.feature` file. Th
 	* **AllPageObjects** - Contanis all the page's objects and this object is shared with cucumber world hence we can access the page object with respect to the scenario scope.
 	* **InteractionHelper** - Created all the actions like click, type, screeshot etc in here so that we can add addional log and easy access.
 
-## Read Test Data
+## Read test data
 **src/utils/dataReader.ts**<br>
 Test data reading start from test data path provided in step defined in the feature file. Test data is provided in JSON file in `TestData/{feature name}/{test case01}` path. data reading is implimented in `src/utils/dataReader.ts`.
 
@@ -151,14 +151,14 @@ We are using winston package for logging. we will manage log start and stop proc
 ### Test output
 * The output of the test execution like order number, payment id etc. can be logged in report for the later use, so didn't create any other mechanism for that. Checkout `src/steps/CommonStepDef.ts`.
 
-## Other Features
+## Other features
 * Added Same test case with multiple types of data - Scenario outline mode
 * Can execute in paralell mode, this can be controlled from cucucmber.js
 * Added cucumber world for managing the state of page object, class object etc
 * Added `InteractionHelper` class so less code in step def classes
 * Most of the exceptions are also handling in `InteractionHelper` class
 
-## Why and Why Not
+## Why and why Not
 * OOPS, used in framework - `scenarioContext.ts`, for implimenting cucumber world
 * Design pattern used
 	* Added factory design pattern in the framework - selecting the browser mechanism
@@ -169,12 +169,7 @@ We are using winston package for logging. we will manage log start and stop proc
 ## Feature need to add
 * dockerized the framework
 	* https://codefresh.io/blog/not-ignore-dockerignore-2/
-* DB Connection should be in singleton pattern
-* Need to run test case from feature file instead of test runner file
-* Integrate with slack - https://www.youtube.com/watch?v=BsLFhe_1By8&list=PLNky9jSTCKG3j0WwqMDFOrr3XMlaSsKOY&index=12
-* Need to add souce labs
-* Need to add browser stack
-* Need to integrate with aws
+* Need to impliment DB validations
 * Need to create artifactory for the framework
 
 ## Referece:
