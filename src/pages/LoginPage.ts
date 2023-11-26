@@ -46,7 +46,7 @@ export default class LoginPage {
 
   public async invalidUserErrorShouldAppear() {
     await expect(this.login_error_msg()).toHaveText(
-      "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found"
+      "Login was unsuccessful. Please correct the errors and try again.No customer account found"
     );
   }
 

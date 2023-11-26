@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npx ts-node src/utils/preTest.ts",
-    "test": "cross-env ENV=staging cucumber-js test || true",
+    "test": "cross-env ENV=staging FORCE_COLOR=0 cucumber-js --config=config/cucumber.js test || true",
     "posttest": "npx ts-node src/utils/reporter/reporter.ts",
     "test:failed": "cucumber-js -p rerun @rerun.txt"
   },

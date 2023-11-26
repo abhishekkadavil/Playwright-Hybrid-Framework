@@ -4,7 +4,7 @@ const commonBrowserOptions = {
   args: ["--start-maximized"],
 };
 export const invokeBrowser = () => {
-  const browserType = process.env.BROWSER;
+  const browserType = process.env.npm_config_browsertype || process.env.BROWSER;
   switch (browserType) {
     case "chrome":
       return chromium.launch({
