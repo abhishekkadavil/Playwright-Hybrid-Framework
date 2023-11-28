@@ -1,4 +1,4 @@
-# Playwright-Supertest-Hybrid-Framework
+# Playwright-Hybrid-Framework
 
 A boilerplate framework that helps you to write automation tests for E2E and API using Playwright and Supertest.
 
@@ -44,10 +44,6 @@ cucumber World is used to impliment scenario context(World create an isolated sc
 * cross-env - Help to pass env variable properly for every platform
 * cucumber - Testing framework
 * faker - for test data
-
-#### API dependencies
-* chai - assertion library
-* supertest - API testing library
 
 #### Other
 * ts-node - TypeScript execution engine and REPL for Node.js.
