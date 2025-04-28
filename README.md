@@ -186,6 +186,7 @@ We are using winston package for logging. we will manage log start and stop proc
   - DI injection in Test context
 - No need to put the locators in exec or properties file because it's not efficient, if we implement such ecosystem we have to create and maintain separate files and related class to maintain that ecosystem which is an overkill
 - instead of cucumber.json we are using cucumber.js(not*.ts beacause we will be during execution it will convert to js hence creating the file in js), because using *.json we cannot pass parameter like tags or anything from command line because it is a static file so if we convert to js file we can pass parameter.
+- Unlike tools like WebdriverIO in playwright we need to manage BrowserContext, Page etc. If you don't explicitly create and manage BrowserContext, Page, then parallel tests may share cookies, storage, etc. That's why frameworks using Playwright force you to create new context and page per test, especially when running tests in parallel. In Playwright, you should NOT share BrowserContext across parallel tests. Each test must have its own sandbox.
 
 ## Feature need to add
 
